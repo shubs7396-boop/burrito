@@ -7,12 +7,23 @@ const MenuPage = () => {
 
   return (
     <div className="min-h-screen bg-orange-50/30">
-      {/* Hero Header */}
-      <div className="bg-gray-900 py-24 text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold font-serif text-white mb-6">Our Menu</h1>
-        <p className="text-xl text-orange-200 max-w-2xl mx-auto">
-          Authentic Mexican flavors, made fresh daily with premium ingredients and our award-winning secret spices.
-        </p>
+      {/* Hero Header with Background Image */}
+      <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <img 
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2000" 
+          alt="Menu Background" 
+          className="absolute inset-0 w-full h-full object-cover transform scale-105"
+        />
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto animate-fade-in">
+          <h1 className="text-6xl md:text-7xl font-bold font-serif text-white mb-6 drop-shadow-2xl tracking-tight">
+            Our Menu
+          </h1>
+          <div className="w-24 h-1.5 bg-orange-500 mx-auto mb-8 rounded-full shadow-lg" />
+          <p className="text-xl md:text-2xl text-orange-100 max-w-2xl mx-auto font-medium drop-shadow-md leading-relaxed">
+            Authentic Mexican flavors, made fresh daily with premium ingredients and our award-winning secret spices.
+          </p>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-16">
