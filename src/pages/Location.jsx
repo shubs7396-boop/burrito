@@ -1,8 +1,31 @@
 import React from 'react';
-import { MapPin, Phone, Clock, Share2, Compass, Info, Heart, Coffee } from 'lucide-react';
+import { MapPin, Phone, Clock, Share2, Compass, Info, Heart, Coffee, Car, Users, Baby, Dog } from 'lucide-react';
 import AmenitiesSection from '../components/AmenitiesSection';
 
 const Location = () => {
+  const visitFeatures = [
+    {
+      icon: <Car size={28} />,
+      title: "Easy Parking",
+      description: "Free parking lot, free street parking, and usually plenty of space for everyone."
+    },
+    {
+      icon: <Baby size={28} />,
+      title: "Family Friendly",
+      description: "Great for kids of all ages! A perfect spot for a family meal in a casual setting."
+    },
+    {
+      icon: <Users size={28} />,
+      title: "Group Welcome",
+      description: "Plenty of seating for groups and tourists visiting the beautiful town of Eden."
+    },
+    {
+      icon: <Dog size={28} />,
+      title: "Pets Allowed",
+      description: "Well-behaved dogs are welcome in our well-decorated outdoor patio area."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header Section with Background Image */}
@@ -128,6 +151,33 @@ const Location = () => {
           </div>
         </div>
       </div>
+
+      {/* Plan Your Visit Section */}
+      <section className="bg-white py-20 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold font-serif text-gray-900 mb-4 tracking-tight">Plan Your Visit</h2>
+            <div className="w-24 h-1.5 bg-orange-500 mx-auto rounded-full" />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {visitFeatures.map((feature, idx) => (
+              <div 
+                key={idx} 
+                className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500 group"
+              >
+                <div className="bg-orange-100 text-orange-600 p-4 rounded-2xl inline-block mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed font-medium">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <AmenitiesSection />
     </div>
