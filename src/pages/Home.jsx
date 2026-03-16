@@ -117,7 +117,7 @@ const Home = () => {
             </div>
             <div>
               <h3 className="font-bold text-gray-900">Address</h3>
-              <p className="text-gray-600">Rochefort St, Eden, TX 76837</p>
+              <p className="text-gray-600">104 Rochefort St, Eden, TX 76837</p>
             </div>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-sm flex items-start space-x-4">

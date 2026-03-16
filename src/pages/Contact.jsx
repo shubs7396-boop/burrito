@@ -49,7 +49,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Our Location</h3>
-                    <p className="text-gray-600 leading-relaxed">Rochefort St, Eden, TX 76837</p>
+                    <p className="text-gray-600 leading-relaxed">104 Rochefort St, Eden, TX 76837</p>
                   </div>
                 </div>
 

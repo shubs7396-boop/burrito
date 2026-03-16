@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin size={18} className="text-orange-500" />
-                <span>Rochefort St, Eden, TX 76837</span>
+                <span>104 Rochefort St, Eden, TX 76837</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={18} className="text-orange-500" />
