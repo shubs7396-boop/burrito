@@ -23,13 +23,23 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Hero Section */}
-      <div className="bg-gray-900 py-32 text-center px-4 overflow-hidden relative">
-        <div className="absolute inset-0 bg-orange-600/10 z-0 opacity-20" />
-        <h1 className="text-5xl md:text-7xl font-bold font-serif text-white mb-6 relative z-10 animate-fade-in">Get in Touch</h1>
-        <p className="text-xl text-orange-200 max-w-2xl mx-auto relative z-10 animate-fade-in delay-200 font-medium">
-          Have a question or want to place a large order? We'd love to hear from you.
-        </p>
+      {/* Hero Section with Background Image */}
+      <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <img 
+          src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?q=80&w=2000" 
+          alt="Contact Us Background" 
+          className="absolute inset-0 w-full h-full object-cover transform scale-105"
+        />
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto animate-fade-in">
+          <h1 className="text-6xl md:text-7xl font-bold font-serif text-white mb-6 drop-shadow-2xl tracking-tight">
+            Get in Touch
+          </h1>
+          <div className="w-24 h-1.5 bg-orange-500 mx-auto mb-6 rounded-full shadow-lg" />
+          <p className="text-xl md:text-2xl text-orange-100 max-w-2xl mx-auto font-medium drop-shadow-md leading-relaxed">
+            Have a question or want to place a large order? We'd love to hear from you.
+          </p>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 -mt-16 pb-24 relative z-20 flex-grow">

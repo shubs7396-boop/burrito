@@ -4,13 +4,23 @@ import { MapPin, Phone, Clock, Share2, Compass, Info, Heart, Coffee } from 'luci
 const Location = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Header Section */}
-      <div className="bg-orange-600 py-24 text-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10 z-0" />
-        <h1 className="text-5xl md:text-6xl font-bold font-serif text-white mb-6 animate-fade-in relative z-10">Find Us in Eden</h1>
-        <p className="text-xl text-orange-100 max-w-2xl mx-auto flex items-center justify-center relative z-10 font-medium">
-          <MapPin className="mr-2" /> 104 Rochefort St, Eden, Texas 76837
-        </p>
+      {/* Header Section with Background Image */}
+      <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <img 
+          src="https://images.unsplash.com/photo-1593504049359-74330189a355?q=80&w=2000" 
+          alt="Eden Texas Restaurant" 
+          className="absolute inset-0 w-full h-full object-cover transform scale-105"
+        />
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto animate-fade-in">
+          <h1 className="text-6xl md:text-7xl font-bold font-serif text-white mb-6 drop-shadow-2xl tracking-tight">
+            Find Us in Eden
+          </h1>
+          <div className="w-24 h-1.5 bg-orange-500 mx-auto mb-6 rounded-full shadow-lg" />
+          <p className="text-xl md:text-2xl text-orange-100 max-w-2xl mx-auto font-medium drop-shadow-md flex items-center justify-center">
+            <MapPin className="mr-2" /> 104 Rochefort St, Eden, Texas 76837
+          </p>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-20 flex-grow">
