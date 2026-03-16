@@ -8,7 +8,10 @@ const Home = () => {
     "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=2000",
     "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=2000",
     "https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?q=80&w=2000",
-    "https://images.unsplash.com/photo-1584031036350-39bf49e1dc00?q=80&w=2000"
+    "https://images.unsplash.com/photo-1626700051175-656a433b112f?q=80&w=2000",
+    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2000",
+    "https://images.unsplash.com/photo-1593504049359-74330189a355?q=80&w=2000",
+    "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?q=80&w=2000"
   ];
 
   const [currentHero, setCurrentHero] = useState(0);
@@ -24,11 +27,11 @@ const Home = () => {
   const prevHero = () => setCurrentHero((prev) => (prev - 1 + heroImages.length) % heroImages.length);
 
   const foodImages = [
-    { url: 'https://images.unsplash.com/photo-1584031036350-39bf49e1dc00?q=80&w=800', alt: 'Delicious Burrito' },
+    { url: 'https://images.unsplash.com/photo-1626700051175-656a433b112f?q=80&w=800', alt: 'Delicious Burrito' },
     { url: 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=800', alt: 'Authentic Tacos' },
     { url: 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?q=80&w=800', alt: 'Cheesy Quesadilla' },
     { url: 'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?q=80&w=800', alt: 'Sizzling Fajitas' },
-    { url: 'https://images.unsplash.com/photo-1541288097918-83e805540dac?q=80&w=800', alt: 'Loaded Nachos' },
+    { url: 'https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=800', alt: 'Loaded Nachos' },
     { url: 'https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?q=80&w=800', alt: 'Fresh Salsa' },
   ];
 
@@ -147,16 +150,23 @@ const Home = () => {
             From our sizzling fajitas to our signature brisket quesadillas, every dish is prepared with love and authentic ingredients.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {foodImages.map((img, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-md">
+            <div key={index} className="group relative overflow-hidden rounded-3xl aspect-[4/3] shadow-lg bg-gray-200 border-4 border-white">
               <img
                 src={img.url}
                 alt={img.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-2"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <p className="text-white font-bold text-lg">{img.alt}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/90 via-orange-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 transform translate-y-4 group-hover:translate-y-0">
+                <p className="text-white font-black text-2xl tracking-tight mb-2 drop-shadow-md">{img.alt}</p>
+                <div className="w-12 h-1 bg-white rounded-full mb-2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <p className="text-orange-100 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  Tap to view details
+                </p>
+              </div>
+              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                <ArrowRight className="text-white h-5 w-5" />
               </div>
             </div>
           ))}

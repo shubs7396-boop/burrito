@@ -35,7 +35,7 @@ export const menuItems = [
         name: "The Signature Burrito", 
         price: "$11.50", 
         description: "Packed with beans, rice, and your choice of protein.",
-        image: "https://images.unsplash.com/photo-1584031036350-39bf49e1dc00?q=80&w=800" 
+        image: "https://images.unsplash.com/photo-1626700051175-656a433b112f?q=80&w=800" 
       },
       { 
         name: "Shrimp Burrito", 
@@ -64,7 +64,7 @@ export const menuItems = [
         name: "Loaded Nachos", 
         price: "$9.99", 
         description: "Crispy chips topped with cheese, jalapenos, and sour cream.",
-        image: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?q=80&w=800" 
+        image: "https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=800" 
       }
     ]
   }
