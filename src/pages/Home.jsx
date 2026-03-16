@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Star, ArrowRight, MapPin, Phone, Clock } from 'lucide-react';
+import { Star, ArrowRight, MapPin, Phone, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { reviews } from '../data/restaurantData';
 
 const Home = () => {
+  const heroImages = [
+    "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=2000",
+    "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=2000",
+    "https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?q=80&w=2000",
+    "https://images.unsplash.com/photo-1584031036350-39bf49e1dc00?q=80&w=2000"
+  ];
+
+  const [currentHero, setCurrentHero] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHero((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextHero = () => setCurrentHero((prev) => (prev + 1) % heroImages.length);
+  const prevHero = () => setCurrentHero((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+
   const foodImages = [
     { url: 'https://images.unsplash.com/photo-1584031036350-39bf49e1dc00?q=80&w=800', alt: 'Delicious Burrito' },
     { url: 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=800', alt: 'Authentic Tacos' },
@@ -15,35 +34,74 @@ const Home = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10" />
-        <img
-          src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=2000"
-          alt="Mexican Food Background"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold font-serif text-white mb-6 animate-fade-in">
-            The Burrito Lady
-          </h1>
-          <p className="text-xl md:text-2xl text-orange-200 mb-8 font-medium">
-            Authentic Mexican Cuisine in the Heart of Eden, Texas
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/menu"
-              className="bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-700 transition-all transform hover:scale-105 flex items-center justify-center shadow-lg"
-            >
-              View Menu <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Link
-              to="/location"
-              className="bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center shadow-lg"
-            >
-              Visit Us
-            </Link>
+      {/* Hero Section with Slider */}
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        {heroImages.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentHero ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <div className="absolute inset-0 bg-black/40 z-10" />
+            <img
+              src={img}
+              alt={`Mexican Food ${index + 1}`}
+              className="absolute inset-0 w-full h-full object-cover transform scale-105"
+            />
           </div>
+        ))}
+        
+        {/* Slider Controls */}
+        <button 
+          onClick={prevHero}
+          className="absolute left-4 z-30 p-2 bg-white/20 hover:bg-white/40 text-white rounded-full transition-all hidden md:block"
+        >
+          <ChevronLeft size={32} />
+        </button>
+        <button 
+          onClick={nextHero}
+          className="absolute right-4 z-30 p-2 bg-white/20 hover:bg-white/40 text-white rounded-full transition-all hidden md:block"
+        >
+          <ChevronRight size={32} />
+        </button>
+
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+          <div className="animate-fade-in">
+            <h1 className="text-6xl md:text-8xl font-bold font-serif text-white mb-6 drop-shadow-2xl">
+              The Burrito Lady
+            </h1>
+            <p className="text-2xl md:text-3xl text-orange-200 mb-10 font-medium drop-shadow-lg">
+              Authentic Flavors, Award-Winning Salsa, Heartfelt Hospitality
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link
+                to="/menu"
+                className="bg-orange-600 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-orange-700 transition-all transform hover:scale-105 flex items-center justify-center shadow-2xl"
+              >
+                Explore Menu <ArrowRight className="ml-2 h-6 w-6" />
+              </Link>
+              <Link
+                to="/location"
+                className="bg-white text-gray-900 px-10 py-5 rounded-full font-bold text-xl hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center shadow-2xl"
+              >
+                Find Us
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Slider Indicators */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex space-x-3">
+          {heroImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentHero(i)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                i === currentHero ? 'bg-orange-500 w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 

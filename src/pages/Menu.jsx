@@ -34,34 +34,47 @@ const MenuPage = () => {
         </div>
 
         {/* Menu Items Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {menuItems
             .find((cat) => cat.category === activeCategory)
             ?.items.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-white p-8 rounded-3xl shadow-sm border border-orange-100 hover:shadow-xl transition-all group relative overflow-hidden"
+                className="bg-white rounded-3xl shadow-sm border border-orange-100 hover:shadow-2xl transition-all group overflow-hidden flex flex-col"
               >
-                <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ChefHat className="text-orange-600 h-6 w-6" />
-                </div>
-                
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold font-serif text-gray-900 group-hover:text-orange-600 transition-colors">
-                    {item.name}
-                  </h3>
-                  <span className="bg-orange-100 text-orange-700 px-4 py-1 rounded-full font-bold text-lg whitespace-nowrap">
+                {/* Dish Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full font-bold text-orange-700 shadow-md">
                     {item.price}
-                  </span>
+                  </div>
                 </div>
-                
-                <p className="text-gray-600 leading-relaxed text-lg italic">
-                  {item.description}
-                </p>
-                
-                <div className="mt-6 pt-6 border-t border-dashed border-gray-100 flex items-center text-sm text-gray-400">
-                  <Info size={14} className="mr-2" />
-                  Ask about our spice levels
+
+                <div className="p-8 flex-grow">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-bold font-serif text-gray-900 group-hover:text-orange-600 transition-colors">
+                      {item.name}
+                    </h3>
+                  </div>
+                  
+                  <p className="text-gray-600 leading-relaxed text-lg italic mb-6">
+                    {item.description}
+                  </p>
+                  
+                  <div className="mt-auto pt-6 border-t border-dashed border-gray-100 flex items-center justify-between text-sm text-gray-400">
+                    <div className="flex items-center">
+                      <ChefHat size={16} className="mr-2 text-orange-500" />
+                      <span>Freshly Prepared</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Info size={14} className="mr-1" />
+                      <span>Details</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
