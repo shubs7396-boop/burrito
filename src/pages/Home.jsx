@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, ArrowRight, MapPin, Phone, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { reviews } from '../data/restaurantData';
+import AmenitiesSection from '../components/AmenitiesSection';
 
 const Home = () => {
   const heroImages = [
@@ -172,6 +173,9 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      {/* Amenities Section */}
+      <AmenitiesSection />
 
       {/* Reviews Section */}
       <section className="py-20 bg-gray-900 text-white overflow-hidden">

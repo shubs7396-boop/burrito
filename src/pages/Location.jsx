@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Clock, Share2, Compass, Info, Heart, Coffee } from 'lucide-react';
+import AmenitiesSection from '../components/AmenitiesSection';
 
 const Location = () => {
   return (
@@ -127,6 +128,8 @@ const Location = () => {
           </div>
         </div>
       </div>
+
+      <AmenitiesSection />
     </div>
   );
 };

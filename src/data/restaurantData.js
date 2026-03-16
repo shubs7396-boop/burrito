@@ -70,6 +70,37 @@ export const menuItems = [
   }
 ];
 
+export const amenities = [
+  {
+    category: "Accessibility",
+    items: ["Wheelchair accessible entrance", "Wheelchair accessible parking lot", "Wheelchair accessible restroom", "Wheelchair accessible seating"]
+  },
+  {
+    category: "Service Options",
+    items: ["Outdoor seating", "Takeout", "Dine-in", "No Delivery"]
+  },
+  {
+    category: "Offerings",
+    items: ["Coffee", "Comfort food", "Quick bite", "Small plates"]
+  },
+  {
+    category: "Dining Options",
+    items: ["Breakfast", "Lunch", "Dinner", "Seating"]
+  },
+  {
+    category: "Atmosphere & Crowd",
+    items: ["Casual", "Quiet", "Good for groups", "Tourists welcome"]
+  },
+  {
+    category: "Payments",
+    items: ["Credit cards", "Debit cards", "NFC mobile payments"]
+  },
+  {
+    category: "Parking & Pets",
+    items: ["Free parking lot", "Free street parking", "Dogs allowed outside"]
+  }
+];
+
 export const reviews = [
   {
     name: "John D.",
