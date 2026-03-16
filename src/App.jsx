@@ -18,6 +18,7 @@ function App() {
             <Route path="/menu" element={<MenuPage />} />
             <Route path="/location" element={<Location />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
         <Footer />
