@@ -28,8 +28,8 @@ const Home = () => {
   const prevHero = () => setCurrentHero((prev) => (prev - 1 + heroImages.length) % heroImages.length);
 
   const foodImages = [
-    { url: 'https://images.unsplash.com/photo-1626700051175-656a433b112f?q=80&w=800', alt: 'Delicious Burrito' },
-    { url: 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=800', alt: 'Authentic Tacos' },
+    { url: 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=800', alt: 'Delicious Burrito' },
+    { url: 'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?q=80&w=800', alt: 'Authentic Tacos' },
     { url: 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?q=80&w=800', alt: 'Cheesy Quesadilla' },
     { url: 'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?q=80&w=800', alt: 'Sizzling Fajitas' },
     { url: 'https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=800', alt: 'Loaded Nachos' },

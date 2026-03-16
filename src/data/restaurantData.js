@@ -35,7 +35,7 @@ export const menuItems = [
         name: "The Signature Burrito", 
         price: "$11.50", 
         description: "Packed with beans, rice, and your choice of protein.",
-        image: "https://images.unsplash.com/photo-1626700051175-656a433b112f?q=80&w=800" 
+        image: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=800" 
       },
       { 
         name: "Shrimp Burrito", 
